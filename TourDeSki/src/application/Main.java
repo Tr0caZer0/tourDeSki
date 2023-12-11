@@ -41,7 +41,7 @@ public class Main extends Application {
 			btn9 = new Button("9");
 			btnStart = new Button("Start");
 			btnQuit = new Button("Quit");
-			btnReset = new Button("Ny");
+			btnReset = new Button("Nytur");
 			btnSearch = new Button("Search");
 			
 			label = new Label();
@@ -60,7 +60,7 @@ public class Main extends Application {
 			btnStart.setMinSize(50, 50);
 			btnQuit.setMinSize(50, 50);
 			btnReset.setMinSize(50, 50);
-			btnSearch.setMinSize(200,50);
+			btnSearch.setMinSize(209,50);
 			
 			btn1.setFont(Font.font("Arial", FontWeight.BOLD, 11));
 			btn2.setFont(Font.font("Arial", FontWeight.BOLD, 11));
@@ -87,7 +87,6 @@ public class Main extends Application {
 			
 			btnStart.setStyle("-fx-background-color: #03fc35");
 			btnQuit.setStyle("-fx-background-color: #fc2803");
-			btnReset.setStyle("-fx-background-color: #c6cfc8");
 			
 			HBox hBoxSearch = new HBox();
 			HBox hBox123S = new HBox();
@@ -96,18 +95,18 @@ public class Main extends Application {
 			
 //			Search button and int window
 			hBoxSearch.alignmentProperty().setValue(Pos.CENTER);
-			hBoxSearch.setSpacing(50);
-			hBoxSearch.setPadding(new Insets(20));
+//			hBoxSearch.setSpacing(50);
+			hBoxSearch.setPadding(new Insets(1));
 //			hBoxSearch.setStyle("-fx-background-color: #206587");
-			hBoxSearch.getChildren().addAll(btnSearch);
+			hBoxSearch.getChildren().add(btnSearch);
 			
-			hBox123S.setPadding(new Insets(1));
-			hBox456R.setPadding(new Insets(1));
-			hBox789Q.setPadding(new Insets(1));
+			hBox123S.setPadding(new Insets(3));
+			hBox456R.setPadding(new Insets(3));
+			hBox789Q.setPadding(new Insets(3));
 			
-			hBox123S.setSpacing(1);
-			hBox456R.setSpacing(1);
-			hBox789Q.setSpacing(1);
+			hBox123S.setSpacing(3);
+			hBox456R.setSpacing(3);
+			hBox789Q.setSpacing(3);
 			
 			hBox123S.alignmentProperty().setValue(Pos.CENTER);
 			hBox456R.alignmentProperty().setValue(Pos.CENTER);
@@ -118,13 +117,13 @@ public class Main extends Application {
 			hBox789Q.getChildren().addAll(btn7, btn8, btn9, btnQuit);
 			
 			VBox vBox = new VBox();
-			vBox.setPadding(new Insets(50));
-			vBox.getChildren().addAll(hBox123S, hBox456R, hBox789Q, label);
+			vBox.setPadding(new Insets(10));
+			vBox.getChildren().addAll(hBox123S, hBox456R, hBox789Q, hBoxSearch, label);
 			
 			
 			BorderPane root = new BorderPane();
-			root.setCenter(vBox);
-			root.setBottom(hBoxSearch);
+			root.setBottom(vBox);
+//			root.setBottom(hBoxSearch);
 			
 			
 //			Add functionality. 
