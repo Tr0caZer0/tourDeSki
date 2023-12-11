@@ -21,6 +21,8 @@ public class Skier extends Time {
 		this.startNr = startNr;
 	}
 	
-	public void addStartTimeToSkier()
+	public void addStartTimeToSkier() {
+		
+	}
 	
 }
