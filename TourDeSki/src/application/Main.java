@@ -3,6 +3,7 @@ package application;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
@@ -11,7 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -23,7 +23,14 @@ public class Main extends Application {
 	String choice;
 	Label label;
 	
+	private StringBuilder inputStringBuilder = new StringBuilder();
+	
 	AtomicInteger countSquares = new AtomicInteger();
+	
+	SkierProperty addFunction = new SkierProperty();
+	
+	
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -41,10 +48,12 @@ public class Main extends Application {
 			btn9 = new Button("9");
 			btnStart = new Button("Start");
 			btnQuit = new Button("Quit");
-			btnReset = new Button("Nytur");
-			btnSearch = new Button("Search");
+			btnReset = new Button("Reset"); // Null the list and then press start to start the competition again. 
+			btnSearch = new Button("Time");
 			
-			label = new Label();
+//			btnStart.setOnAction(event -> addFunction.addSkier());
+			
+			label = new Label("");
 			
 			choice = "";
 			
@@ -74,6 +83,7 @@ public class Main extends Application {
 			btnStart.setFont(Font.font("Arial", FontWeight.BOLD, 11));
 			btnQuit.setFont(Font.font("Arial", FontWeight.BOLD, 11));
 			btnReset.setFont(Font.font("Arial", FontWeight.BOLD, 11));
+			btnSearch.setFont(Font.font("Arial", FontWeight.BOLD, 11));
 			
 			btn1.setStyle("-fx-background-color: #e0d4a8");
 			btn2.setStyle("-fx-background-color: #e0d4a8");
@@ -85,8 +95,8 @@ public class Main extends Application {
 			btn8.setStyle("-fx-background-color: #e0d4a8");
 			btn9.setStyle("-fx-background-color: #e0d4a8");
 			
-			btnStart.setStyle("-fx-background-color: #03fc35");
-			btnQuit.setStyle("-fx-background-color: #fc2803");
+			btnStart.setStyle("-fx-background-color: #0ac21c");
+			btnQuit.setStyle("-fx-background-color: #c22d1d");
 			
 			HBox hBoxSearch = new HBox();
 			HBox hBox123S = new HBox();
@@ -137,6 +147,68 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	
+	private static void switchCaseButton() {
+		
+		while(true) {
+			switch(menu()) {
+				
+			case -1:
+				
+				break;
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				break;
+			case 9:
+				break;
+			case 10:
+				break;
+			case 11:
+				break;
+			}
+		}
+		
+	}
+	
+public static int menu() {
+		
+		int menuSelection = 0;
+		while(true) {
+			
+			String command = stringInput(); 
+			
+			try {
+				
+				menuSelection = Integer.parseInt(command);
+				
+				if(menuSelection == 0) {
+					return -1;
+				}
+				
+				break;
+			}catch(NumberFormatException e){
+				
+				System.out.println("ogilitig inmatning");
+			}// end try catch
+			
+		}//end while loop
+		
+		return menuSelection;
+	}// end menu method
+	 
 	
 	public static void main(String[] args) {
 		launch(args);
